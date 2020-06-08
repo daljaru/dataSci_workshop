@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style type="text/css">
+	*{
+		margin: 0px;
+	}
+
+	#registerTable{
+		border-collapse: collapse;
+		margin: auto;
+		margin-top: 50px;
+	}
+	td{
+		border: 1px solid #E8E8E8;
+		padding: 10px;
+	}
+	h2{
+		text-align: center;
+	}
+	.required{
+		color: red;
+	}
+	.bgGrey{
+		background-color: #E8E8E8;
+	}
+	.sideWhiteColor{
+		border-right-color: white;
+		border-left-color: white;
+	}
+	.sideWhiteColor.UptoBottomWhite{
+		border-bottom-color: white;
+	}
+	#info{
+		color:blue;
+		font-size: x-small;
+		text-align: center;
+	}
+	.btn.btn-link{
+		font-size: x-small;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<form action="RGB" method="post">
+			<table id="registerTable">
+				<tr class = "bgGrey">
+					<td colspan="2"><h2>도서 등록 화면</h2></td>
+				</tr>
+				<tr>
+					<td class="sideWhiteColor" colspan="2"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><font class="required">*</font>표시가 된 항목은 필수 입력 항목입니다.</td>
+				</tr>
+				<tr>
+					<td colspan="2" class = "bgGrey"></td>
+				</tr>
+				<tr>
+					<td><font class="required">*</font>도서번호</td>
+					<td><input type="text" name="isbn1" required="required">-<input type="text" name="isbn2" required="required">-<input type="text" name="isbn3" required="required"> </td>
+				</tr>
+				<tr>
+					<td><font class="required">*</font>도서제목</td>
+					<td><input type="text" name="title" required="required"></td>
+				</tr>
+				<tr>
+					<td><font class="required">*</font>도서종류</td>
+					<td>
+						<select name="catalogue">
+							<option hidden="true">해당 항목을 선택하세요</option>
+							<option value="현대소설">현대소설</option>
+							<option value="에세이">에세이</option>
+							<option value="철학">철학</option>
+							<option value="인문학">인문학</option>
+							<option value="사회과학">사회과학</option>
+							<option value="교양">교양</option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>*출판국가</td>
+					<td>
+						<label><input type="radio" name="nation" value="국내도서" checked="checked">국내도서</label>
+						<label><input type="radio" name="nation" value="외국도서">외국도서</label>
+					</td>
+				</tr>
+				<tr>
+					<td>*출 판 일</td>
+					<td><input type="date" name="publish_date"></td>
+				</tr>
+				<tr>
+					<td>*출 판 사</td>
+					<td>
+						<select name="publisher">
+							<option hidden="true">해당 항목을 선택하세요</option>
+							<option value="문학동네">문학동네</option>
+							<option value="창작과 비평">창작과 비평</option>
+							<option value="난다">난다</option>
+							<option value="민음사">민음사</option>
+							<option value="문학과 지성사">문학과 지성사</option>
+							<option value="청미">청미</option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td><font class="required">*</font>저&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자</td>
+					<td><input type="text" name="author" required="required"></td>
+				</tr>
+				<tr>
+					<td>*도서가격</td>
+					<td>
+						<input type="text" name="price">
+						<select name="currency">
+							<option value="원">원</option>
+							<option value="달러">달러</option>
+							<option value="위안">위안</option>
+							<option value="유로">유로</option>
+							<option value="파운드">파운드</option>
+						</select> 
+					</td>
+				</tr>
+				<tr>
+					<td>요약내용</td>
+					<td class = "bgGrey"><textarea name="description" style="resize:vertical; width:100%; height:100px;"></textarea></td>
+				</tr>
+				<tr>
+					<td class="sideWhiteColor" colspan="2"></td>
+				</tr>
+				<tr class = "bgGrey">
+					<td colspan="2" align="center">
+						<button type="submit" class="btn btn-light" value="register">
+						<svg class="bi bi-caret-right-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  							<path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+						</svg>도서등록</button>
+						<button type="reset" class="btn btn-light" value="cancel">
+						<svg class="bi bi-caret-right-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  							<path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+						</svg>취소</button>
+					</td>
+				</tr>
+				<tr id="info">
+					<td colspan="2"  class="sideWhiteColor UptoBottomWhite">
+						<div>
+							<button type="button" class="btn btn-link" value="register">
+							사전 도움말</button>
+							-
+							<button type="button" class="btn btn-link" value="register">이용약관</button>
+							-
+							<button type="button" class="btn btn-link" value="register">개인정보취급방침</button>
+							-
+							<button type="button" class="btn btn-link" value="register">책임의 한계와 법적고지</button>
+							-
+							<button type="button" class="btn btn-link" value="register">고객센터</button>
+						</div>
+						<div>Copyright ⓒ 2020. HaBaRee. All Rights Reserved.</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+</script>
+</body>
+</html>
